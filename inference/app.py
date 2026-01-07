@@ -16,10 +16,15 @@ authenticator = stauth.Authenticate(
     config["cookie"]["expiry_days"]
 )
 
-name, authentication_status, username = authenticator.login("Login")
+# ✅ LOGIN (location obligatoire et valide)
+name, authentication_status, username = authenticator.login(
+    "Login",
+    location="main"
+)
 
 if authentication_status is False:
     st.error("❌ Identifiants incorrects")
+    st.stop()
 
 if authentication_status is None:
     st.warning("👋 Merci de vous connecter")
@@ -28,6 +33,7 @@ if authentication_status is None:
 if authentication_status:
     authenticator.logout("Logout", "sidebar")
     st.sidebar.success(f"Connecté en tant que {name}")
+
 ####################
 
 
