@@ -1,0 +1,15 @@
+credentials:
+  usernames:
+    mamadou:
+      email: mamadousanogo@gmail.com
+      name: Mamadou Sanogo
+      password: "$2b$12$9X0uXzY1FZcYpF5Fh7xqBeGz5ZtN1O8M0YwzF8cZq0v4R5zY6uGxK"
+    admin:
+      email: admin@project.com
+      name: Admin
+      password: "$2b$12$C9mN0tF2kQ8Z8R8s2L0nQe6fR3pJkNnFvM8Gx5V9Q6F2YzA8E7PZC"
+
+cookie:
+  expiry_days: 1
+  key: churn_auth
+  name: churn_cookie
