@@ -1,41 +1,6 @@
 import streamlit as st
 import pandas as pd
 from inf_locale import predict
-#########
-import yaml
-from yaml.loader import SafeLoader
-import streamlit_authenticator as stauth
-
-with open("config.yaml") as file:
-    config = yaml.load(file, Loader=SafeLoader)
-
-authenticator = stauth.Authenticate(
-    config["credentials"],
-    config["cookie"]["name"],
-    config["cookie"]["key"],
-    config["cookie"]["expiry_days"]
-)
-
-# ✅ LOGIN (location obligatoire et valide)
-name, authentication_status, username = authenticator.login(
-    "Login",
-    "main"
-)
-
-
-if authentication_status is False:
-    st.error("❌ Identifiants incorrects")
-    st.stop()
-
-if authentication_status is None:
-    st.warning("👋 Merci de vous connecter")
-    st.stop()
-
-if authentication_status:
-    authenticator.logout("Logout", "sidebar")
-    st.sidebar.success(f"Connecté en tant que {name}")
-
-####################
 
 
 st.set_page_config(page_title="Churn Prediction", layout="wide")
