@@ -19,8 +19,9 @@ authenticator = stauth.Authenticate(
 # ✅ LOGIN (location obligatoire et valide)
 name, authentication_status, username = authenticator.login(
     "Login",
-    location="main"
+    "main"
 )
+
 
 if authentication_status is False:
     st.error("❌ Identifiants incorrects")
